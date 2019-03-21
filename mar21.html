@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> March 21st </title>
+	<script src="p5.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin: 0;
+		}
+		button{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript" charset="utf-8">
+		let param = 1;
+		function setup()
+		{
+			createCanvas(1320, 680, WEBGL);
+			background(169);
+			specularMaterial(60);
+		}
+		function draw() 
+		{
+			background(169);
+			//noStroke();
+
+			scale(param);
+
+			orbitControl();
+		  	rotateZ(QUARTER_PI);
+
+		  	translate(0, 25, 0);
+		  	cylinder(270, 10);
+
+		  	translate(0, 80, 0);
+		  	cylinder(30, 170);
+		  	
+		  	translate(0, 90, 0);
+		  	cylinder(135, 15);
+		}
+		
+		function mouseWheel(event)
+		{
+			print(event.delta);
+			param += -event.delta / 400;
+			return false();
+		}
+		
+	</script>
+</body>
+</html>
